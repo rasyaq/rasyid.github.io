@@ -1,3 +1,3 @@
 ## Rasyaq's Notes
 
-![Image of rasyid](https://pbs.twimg.com/profile_images/1320736383/image_400x400.jpg)
+Selamat datang di catatan saya tentang computer vision, machine learning, dan deep learning.
