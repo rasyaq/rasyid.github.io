@@ -1,8 +1,3 @@
-<script type="text/javascript" async
-src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js? 
-config=TeX-MML-AM_CHTML"
-</script>
-
 # Meta Learning
 
 Meta-learning adalah sebuah mekanisme pembelajaran *machine learning* untuk mempelajari sebuah *task* baru yang tidak pernah dipelajari sebelumnya. Istilah lainnya, *learning to learn*.
@@ -10,4 +5,4 @@ Meta-learning adalah sebuah mekanisme pembelajaran *machine learning* untuk memp
 Model meta-learning yang baik diharapkan mampu beradaptasi dengan baik atau menggeneralisasi *task*  baru dan lingkungan baru yang belum pernah ditemukan selama waktu *training* (pelatihan). Proses adaptasi model, yang pada dasarnya adalah sesi *training* yang lebih kecil, terjadi selama *testing* tetapi dengan paparan terbatas terhadap konfigurasi *task* baru. Akhirnya, model yang diadaptasi dapat menyelesaikan *task* baru dengan baik.
 
 Model meta-learning yang baik harus dilatih di atas berbagai *task* pembelajaran dan dioptimalkan untuk kinerja terbaik pada distribusi *task*, termasuk *task* yang belum teramati. Setiap *task* dikaitkan dengan dataset D, yang berisi vektor fitur dan label sebenarnya. Parameter model optimal adalah:
-$\theta=\argmin{\theta}{E_{D~p(D)}L(D)]$
+$\theta=\argmin{\theta}{E_{D~p(D)}L_{\theta}(D)]$
