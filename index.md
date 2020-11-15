@@ -1,5 +1,5 @@
 ## Catatan Rasyid
 
-Selamat datang di catatan saya tentang computer vision, machine learning, dan deep learning.
+Selamat datang di catatan kecil saya tentang AI, pattern recognition, computer vision, machine learning/deep learning.
 
 Profil saya: [situs pribadi](https://www.rasyidaqmar.com/)
