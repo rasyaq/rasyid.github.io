@@ -2,7 +2,7 @@
 
 *Meta-learning* adalah sebuah mekanisme pembelajaran *machine learning* untuk mempelajari sebuah *task* baru yang tidak pernah dipelajari sebelumnya. Istilah lainnya, *learning to learn*. 
 
-Yang di maksud dengan *Learning to learn* di sini adalah, pada tahap *training* (pelatihan), model dipaparkan pada beberapa *training tasks* dengan set data yang berbeda berisikan *support* dan *query* yang berisi data sebanyak N-kelas dan K-sample (dikenal juga dengan *N-way K-shot*). Lalu, *training* dilakukan dengan bertahap di mana pada setiap taha, model parameter diperbarui pada *training task* yang dipilih secara acak. 
+Yang dimaksud dengan *Learning to learn* di sini adalah, pada tahap *training* (pelatihan), model dipaparkan pada beberapa *training tasks* dengan set data yang berbeda berisikan *support* dan *query* yang berisi data sebanyak N-kelas dan K-sample (dikenal juga dengan *N-way K-shot*). Lalu, *training* dilakukan dengan bertahap di mana pada setiap taha, model parameter diperbarui pada *training task* yang dipilih secara acak. 
 
 Tujuan utama *Meta-Learning* adalah agar model bisa belajar pemisahan kelas secara umum dibanding hanya berfokus pada pemisahan subset kelas objek yang lebih spesifik. 
 
