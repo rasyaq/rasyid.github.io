@@ -8,7 +8,9 @@ The attention mechanism creates direct connections between all inputs in a seque
 
 ### Attention: Finding What Matters
 At its core, attention is about focusing on what's relevant. Just like we pay visual attention to certain objects in a scene, attention in deep learning models lets them focus on pertinent parts of their input.
-$a_i = \alpha (**q**,**k_i**)$
+
+$$a_i = \alpha (**q**,**k_i**)$$
+
 But how does attention actually work? The first step is to calculate similarity scores between a query and a set of key-value pairs. The query encapsulates what the model wants to focus on. The keys represent candidate relevant inputs. 
 These similarity scores are calculated using functions like the scaled dot product. This determines how closely the query aligns with each key based on their vector representations. Keys with higher dot products have greater relevance to the query.
 Next, a softmax layer turns the scores into normalized probabilities. This assigns likelihood values to each input indicating how pertinent it is given the query. The probabilities are used to calculate a weighted sum of the values - placing more emphasis on relevant inputs.
