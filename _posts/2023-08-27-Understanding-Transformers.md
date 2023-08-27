@@ -80,6 +80,8 @@ By employing multi-head attention, transformers can jointly process information 
 ![](/images/1_3aO7OEvLZZm7h8bVXlgRZQ.gif)
 ![](/images/1__-AYcynG8pgLkCdUQmuzFA.gif)
 
+Source: https://yashugupta-gupta11.medium.com/in-and-out-of-transformers-attention-is-all-you-need-deep-nlp-horse-260b97988278
+
 ## Behind the Magic - A High-Level View
 Fundamentally, the transformer consists of an encoder and a decoder. The encoder maps the input to a rich, contextual representation. The decoder then uses this representation to generate the output.
 In NLP, the encoder operates on the input text while the decoder generates the translated or summarized text. For image processing, the encoder processes the input image and the decoder reconstructs or generates it.
