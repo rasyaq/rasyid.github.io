@@ -22,7 +22,7 @@ These scores determine a weighted sum representing the relevant context for each
 In self-attention, the queries, keys and values all come from the same place - different positions of the input sequence. This allows relating different parts of the sequence to each other. For example, a token could attend to previous tokens that provide context for understanding it.
 For some curious rechnical readers, let me put the code snippets for the attention function as follows. 
 
-    # Implement attention (Scaled Dot Product)
+    # Attention implementation (Scaled Dot Product)
     def attention(query_vec, key_mat, value_mat, mask=None, dropout=None):
         # Calculate dot product between query and keys
         key_dim = query_vec.size(-1)
