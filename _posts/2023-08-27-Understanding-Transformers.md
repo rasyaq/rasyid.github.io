@@ -16,7 +16,9 @@ $$x_i = \alpha (q, k_i)$$
 The query $q$ encapsulates what the model wants to focus on. The keys $k$ represent candidate relevant inputs. 
 These similarity scores are calculated using functions like the scaled dot product. This determines how closely the query aligns with each key based on their vector representations. Keys $k_i$ with higher dot products have greater relevance to the query $q$.
 
-### Self-Attention
+## The Intuition Behind Self-Attention
+Self-attention, the core innovation behind transformers, is conceptually simple. For each input, it calculates attention scores against all other inputs based on their relatedness. Highly related inputs get higher scores.
+These scores determine a weighted sum representing the relevant context for each input. By focusing on the most important parts of the sequence, self-attention provides the right contextual representation to encode the inputs effectively.
 In self-attention, the queries, keys and values all come from the same place - different positions of the input sequence. This allows relating different parts of the sequence to each other. For example, a token could attend to previous tokens that provide context for understanding it.
 
 ### Output Scoring
@@ -33,8 +35,4 @@ The decoder also has a cross-attention layer that focuses on relevant parts of t
 
 ## Simpler Than It Looks!
 While transformers enable complex modeling, the implementation involves simple, repeated blocks of self-attention, cross-attention and feedforward layers. This repetitive structure makes transformers easy to optimize and scale to huge datasets across diverse domains.
-
-## The Intuition Behind Self-Attention
-Self-attention, the core innovation behind transformers, is conceptually simple. For each input, it calculates attention scores against all other inputs based on their relatedness. Highly related inputs get higher scores.
-These scores determine a weighted sum representing the relevant context for each input. By focusing on the most important parts of the sequence, self-attention provides the right contextual representation to encode the inputs effectively.
 
