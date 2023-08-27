@@ -11,7 +11,7 @@ At its core, attention is about focusing on what's relevant. Just like we pay vi
 
 But how does attention actually work? The first step is to calculate similarity scores between a query and a set of key-value pairs. 
 
-$$x_i = \alpha (**q**,**k**_i)$$
+$$x_i = \alpha (q, k_i)$$
 
 The query encapsulates what the model wants to focus on. The keys represent candidate relevant inputs. 
 These similarity scores are calculated using functions like the scaled dot product. This determines how closely the query aligns with each key based on their vector representations. Keys $k_i$ with higher dot products have greater relevance to the query $q$.
