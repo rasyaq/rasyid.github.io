@@ -15,6 +15,11 @@ $$x_i = \alpha (q, k_i)$$
 
 The query $q$ encapsulates what the model wants to focus on. The keys $k$ represent candidate relevant inputs. 
 These similarity scores are calculated using functions like the scaled dot product. This determines how closely the query aligns with each key based on their vector representations. Keys $k_i$ with higher dot products have greater relevance to the query $q$.
+
+### Self-Attention
+In self-attention, the queries, keys and values all come from the same place - different positions of the input sequence. This allows relating different parts of the sequence to each other. For example, a token could attend to previous tokens that provide context for understanding it.
+
+### Output Scoring
 Next, a softmax layer turns the scores into normalized probabilities. This assigns likelihood values to each input indicating how pertinent it is given the query. The probabilities are used to calculate a weighted sum of the values - placing more emphasis on relevant inputs.
 
 $$y_1, \cdots, y_n = softmax (x_i, \cdots, x_n)$$
