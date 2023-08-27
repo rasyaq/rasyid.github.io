@@ -75,7 +75,7 @@ Specifically, multi-headed attention is used in three key places within the tran
 - Decoder Self-Attention: The decoder queries, keys, and values come from the previous decoder outputs. Masking prevents leftward information flow and maintains auto-regressive order.
 - Encoder-Decoder Attention: The decoder queries come from the decoder, while the encoder keys and values are projected to the decoder. This bridges both components.
 
-By employing multi-head attention, transformers can jointly process information at different positions from different representational subspaces. This provides expressive power to learn complex functions mapping input sequences to output sequences. Multi-head attention has been a crucial innovation for creating effective deep attentional models. 
+By employing multi-headed attention, transformers can jointly process information at different positions from different representational subspaces. This provides expressive power to learn complex functions mapping input sequences to output sequences. Multi-headed attention has been a crucial innovation for creating effective deep attentional models. 
 
 ![](/images/1_3aO7OEvLZZm7h8bVXlgRZQ.gif)
 ![](/images/1__-AYcynG8pgLkCdUQmuzFA.gif)
