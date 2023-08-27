@@ -65,11 +65,11 @@ For some curious technical readers, let me put the code snippets for the attenti
 
 
 ### Multi-Headed Attention: A Key Building Block of Transformers
-One of the most important attentional components is multi-head attention. This allows the model to jointly attend to information from different representation subspaces at different positions.
-At its core, multi-head attention involves projecting the inputs into multiple "heads", where each head represents a different attentional representation. Within each head, scaled dot-product attention is applied between the query, key, and value vectors. This produces an output for each head.
+One of the most important attentional components is multi-headed attention. This allows the model to jointly attend to information from different representation subspaces at different positions.
+At its core, multi-headed attention involves projecting the inputs into multiple "heads", where each head represents a different attentional representation. Within each head, scaled dot-product attention is applied between the query, key, and value vectors. This produces an output for each head.
 
-The different heads are then concatenated and projected again to the final values. This multi-head approach provides the benefits of both summarizing the inputs and focusing on different positional and representational relationships.
-Specifically, multi-head attention is used in three key places within the transformer architecture:
+The different heads are then concatenated and projected again to the final values. This multi-headed approach provides the benefits of both summarizing the inputs and focusing on different positional and representational relationships.
+Specifically, multi-headed attention is used in three key places within the transformer architecture:
 
 - Encoder Self-Attention: The encoder queries, keys, and values all come from the encoder's input. This allows each position to attend to all other positions and capture contextual relationships.
 - Decoder Self-Attention: The decoder queries, keys, and values come from the previous decoder outputs. Masking prevents leftward information flow and maintains auto-regressive order.
