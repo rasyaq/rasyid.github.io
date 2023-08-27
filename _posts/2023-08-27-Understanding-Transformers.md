@@ -13,7 +13,7 @@ But how does attention actually work? The first step is to calculate similarity 
 
 $$x_i = \alpha (q, k_i)$$
 
-The query encapsulates what the model wants to focus on. The keys represent candidate relevant inputs. 
+The query $q$ encapsulates what the model wants to focus on. The keys $k$ represent candidate relevant inputs. 
 These similarity scores are calculated using functions like the scaled dot product. This determines how closely the query aligns with each key based on their vector representations. Keys $k_i$ with higher dot products have greater relevance to the query $q$.
 Next, a softmax layer turns the scores into normalized probabilities. This assigns likelihood values to each input indicating how pertinent it is given the query. The probabilities are used to calculate a weighted sum of the values - placing more emphasis on relevant inputs.
 
