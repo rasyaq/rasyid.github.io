@@ -64,7 +64,7 @@ For some curious technical readers, let me put the code snippets for the attenti
         return attention_output, attention_weights
 
 
-### Multi-Head Attention: A Key Building Block of Transformers
+### Multi-Headed Attention: A Key Building Block of Transformers
 One of the most important attentional components is multi-head attention. This allows the model to jointly attend to information from different representation subspaces at different positions.
 At its core, multi-head attention involves projecting the inputs into multiple "heads", where each head represents a different attentional representation. Within each head, scaled dot-product attention is applied between the query, key, and value vectors. This produces an output for each head.
 
