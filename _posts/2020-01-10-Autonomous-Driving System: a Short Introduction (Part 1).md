@@ -15,10 +15,18 @@ When someone talks about autonomous driving, or some car's manufacturers (OEM) m
 Apparently a society working in Automotive (SAE) and Traffic (NHTSA) have defined the level of autonomy for the driving. Previously, both of them have a different numbers of level, although they meant almost the same thing.
 Currently (from September 2016), they have the same numbers of level and similar definition (actually, NHTSA adopt the SAE level), which probably meant to avoid confusion among autonomous driving community.
 The level of autonomous driving is divided into 6 stages, which emphasize on the level of human driver's (so alien driver, you are lucky..) intervention/responsibility on the car (and not the capabilities of the car):
-Level 0: No automation, human/driver is fully responsible even though there is warning system in the car. This level covers most of the cars in the world when this article is written.
-Level 1: Driver assistance,  includes one of the automatic assistance on steering, or acceleration and deceleration. Basically, we call this ADAS. Human drivers are expected to take control on their car.
-Level 2: Partial automation,  a more advanced ADAS, includes one or more automatic assistance on steering, acceleration and deceleration. Human drivers are still expected to take control on their car.
-Level 3: Conditional automation, the beginning of a so called semi-autonomous driving. The car observes its surrounding and do the the automatic action of all driving functions. Note that human driver is still required to respond when there is a request to intervene the system.
-Level 4: High automation, We can call this an autonomous driving, where the car can do all the driving functions, even if the driver fails to respond the request to intervene the system. The responsibility is now higher on the system. At this level, even if you are a driver, you will feel a bit of a passenger or a co-driver of your car.
-Level 5: Full automation, This is what we call a complete autonomous driving. So please sit back, relax, enjoy your time and let your car do the rest. No responsibility in your side whatsoever in case something happens, although the car at this level should be the safest of a car can be.
+
+##Level 0: 
+No automation, human/driver is fully responsible even though there is warning system in the car. This level covers most of the cars in the world when this article is written.
+##Level 1: 
+Driver assistance,  includes one of the automatic assistance on steering, or acceleration and deceleration. Basically, we call this ADAS. Human drivers are expected to take control on their car.
+##Level 2: 
+Partial automation,  a more advanced ADAS, includes one or more automatic assistance on steering, acceleration and deceleration. Human drivers are still expected to take control on their car.
+##Level 3: 
+Conditional automation, the beginning of a so called semi-autonomous driving. The car observes its surrounding and do the the automatic action of all driving functions. Note that human driver is still required to respond when there is a request to intervene the system.
+##Level 4: 
+High automation, We can call this an autonomous driving, where the car can do all the driving functions, even if the driver fails to respond the request to intervene the system. The responsibility is now higher on the system. At this level, even if you are a driver, you will feel a bit of a passenger or a co-driver of your car.
+##Level 5: 
+Full automation, This is what we call a complete autonomous driving. So please sit back, relax, enjoy your time and let your car do the rest. No responsibility in your side whatsoever in case something happens, although the car at this level should be the safest of a car can be.
+
 This is the first part of the article. In the next part, I will continue to discuss about the autonomous driving function which covers sensing, planning, mapping, cooperating, and to see a bit where we are now before reaching our ultimate goal, that is, having a level 5 self-driving car.
