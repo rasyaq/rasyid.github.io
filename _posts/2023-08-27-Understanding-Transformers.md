@@ -11,10 +11,10 @@ At its core, attention is about focusing on what's relevant. Just like we pay vi
 
 But how does attention actually work? The first step is to calculate similarity scores between a query and a set of key-value pairs. 
 
-$$x_i = \alpha \mathbb{q},\mathbb{k_i})$$
+$$x_i = \alpha (**q**,**k**_i)$$
 
 The query encapsulates what the model wants to focus on. The keys represent candidate relevant inputs. 
-These similarity scores are calculated using functions like the scaled dot product. This determines how closely the query aligns with each key based on their vector representations. Keys with higher dot products have greater relevance to the query.
+These similarity scores are calculated using functions like the scaled dot product. This determines how closely the query aligns with each key based on their vector representations. Keys $k_i$ with higher dot products have greater relevance to the query $q$.
 Next, a softmax layer turns the scores into normalized probabilities. This assigns likelihood values to each input indicating how pertinent it is given the query. The probabilities are used to calculate a weighted sum of the values - placing more emphasis on relevant inputs.
 
 $$y_1, \cdots, y_n = softmax (x_i, \cdots, x_n)$$
