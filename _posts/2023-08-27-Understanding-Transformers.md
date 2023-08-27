@@ -9,8 +9,9 @@ Transformers lead a new era of contextual sequence modeling through their pionee
 <img src="../images/transformers-diagram.JPG" alt="">
 
 ![Inside-Transformer](https://github.com/rasyaq/rasyaq.github.io/blob/master/images/transformers-diagram-depth.JPG "Inside Transformer")
+<img src="../images/transformers-diagram-depth.JPG" alt="">
 
-Both images are courtesy of: (Source: http://peterbloem.nl/blog/transformers)
+Source: http://peterbloem.nl/blog/transformers
 
 The attention mechanism creates direct connections between all inputs in a sequence, allowing the model to focus on the most relevant parts as needed. This is akin to how we pay visual attention to certain regions in an image.
 Human comprehension integrates context fluidly. When reading text, we interpret the meaning of each word in relation to the surrounding words and phrases. Transformers mimic this contextual processing through multi-headed self-attention. The model learns contextual relationships between all words in a passage, not just sequential dependencies.
