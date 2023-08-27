@@ -6,6 +6,14 @@ But what exactly are transformers and how do they work? In this post, I’ll unp
 Transformers introduced the novel concept of attention mechanisms for modeling sequences. While recurrent neural networks (RNNs) process sequences sequentially, transformers process the entire sequence at once in parallel.
 The attention mechanism creates direct connections between all inputs in a sequence, allowing the model to focus on the most relevant parts as needed. This is akin to how we pay visual attention to certain regions in an image.
 
+### Attention: Finding What Matters
+At its core, attention is about focusing on what's relevant. Just like we pay visual attention to certain objects in a scene, attention in deep learning models lets them focus on pertinent parts of their input.
+$a_i = \alpha (**q**,**k_i**)$
+But how does attention actually work? The first step is to calculate similarity scores between a query and a set of key-value pairs. The query encapsulates what the model wants to focus on. The keys represent candidate relevant inputs. 
+These similarity scores are calculated using functions like the scaled dot product. This determines how closely the query aligns with each key based on their vector representations. Keys with higher dot products have greater relevance to the query.
+Next, a softmax layer turns the scores into normalized probabilities. This assigns likelihood values to each input indicating how pertinent it is given the query. The probabilities are used to calculate a weighted sum of the values - placing more emphasis on relevant inputs.
+
+
 ## Behind the Magic - A High-Level View
 Fundamentally, the transformer consists of an encoder and a decoder. The encoder maps the input to a rich, contextual representation. The decoder then uses this representation to generate the output.
 In NLP, the encoder operates on the input text while the decoder generates the translated or summarized text. For image processing, the encoder processes the input image and the decoder reconstructs or generates it.
