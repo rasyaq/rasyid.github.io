@@ -5,9 +5,9 @@ But what exactly are transformers and how do they work? In this post, I’ll unp
 ## A Picture is Worth a Thousand Words
 Transformers lead a new era of contextual sequence modeling through their pioneering attention mechanisms. For complex language tasks, transformers capture the interdependencies between words in a contextualized manner that recurrent models cannot. While recurrent neural networks (RNNs) process sequences sequentially, transformers process the entire sequence at once in parallel.
 
-![Encoder-Decoder-with-Transformer]("../images/transformers-diagram.JPG")
+![Encoder-Decoder-with-Transformer](../images/transformers-diagram.JPG)
 
-![Inside-Transformer]("../images/transformers-diagram-depth.JPG")
+![Inside-Transformer](../images/transformers-diagram-depth.JPG)
 
 Source: http://peterbloem.nl/blog/transformers
 
