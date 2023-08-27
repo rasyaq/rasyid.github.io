@@ -23,16 +23,27 @@ In self-attention, the queries, keys and values all come from the same place - d
 For some curious rechnical readers, let me put the code snippets for the attention function as follows. 
 
     # Implement attention (Scaled Dot Product)
-    def attention(query, key, value, mask=None, dropout=None):
-        d_k = query.size(-1)
-        scores = torch.matmul(query, key.transpose(-2, -1)) / math.sqrt(d_k)
+    def attention(query_vec, key_mat, value_mat, mask=None, dropout=None):
+        # Calculate dot product between query and keys
+        key_dim = query_vec.size(-1)
+        relevance_scores = torch.matmul(query_vec, key_mat.transpose(-2, -1)) / math.sqrt(key_dim)
+  
+        # Apply optional mask 
         if mask is not None:
-            scores = scores.masked_fill(mask == 0, -1e9)
-        p_attn = F.softmax(scores, dim = -1)
+            relevance_scores = relevance_scores.masked_fill(mask == 0, -1e9)
+  
+        # Convert scores to probabilites  
+        attention_weights = F.softmax(relevance_scores, dim=-1)
+
+        # Apply optional dropout 
         if dropout is not None:
-            p_attn = dropout(p_attn)
-        attention_result = torch.matmul(p_attn, value)
-        return attention_result, p_attn
+        attention_weights = dropout(attention_weights)
+
+        # Calculate weighted average of values
+        attention_output = torch.matmul(attention_weights, value_mat)
+
+        return attention_output, attention_weights
+
 
 ### Output Scoring
 Next, a softmax layer turns the scores into normalized probabilities. This assigns likelihood values to each input indicating how pertinent it is given the query. The probabilities are used to calculate a weighted sum of the values - placing more emphasis on relevant inputs.
