@@ -1,5 +1,6 @@
-## Catatan Rasyid
+## Rasyid's Notes
 
-Selamat datang di catatan kecil saya tentang AI, pattern recognition, computer vision, machine learning/deep learning.
+Welcome to my notes on AI and machine learning.
+Selamat datang di catatan kecil saya tentang AI dan machine learning.
 
-Profil saya: [situs pribadi](https://www.rasyidaqmar.com/)
+Personal website: https://mrasyidaqmar.github.io/
