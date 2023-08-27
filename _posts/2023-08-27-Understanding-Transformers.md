@@ -3,8 +3,12 @@ Transformers have emerged as one of the most influential innovations in deep lea
 But what exactly are transformers and how do they work? In this post, I’ll unpack the transformer architecture at an intuitive level.
 
 ## A Picture is Worth a Thousand Words
-Transformers introduced the novel concept of attention mechanisms for modeling sequences. While recurrent neural networks (RNNs) process sequences sequentially, transformers process the entire sequence at once in parallel.
+Transformers lead a new era of contextual sequence modeling through their pioneering attention mechanisms. For complex language tasks, transformers capture the interdependencies between words in a contextualized manner that recurrent models cannot. While recurrent neural networks (RNNs) process sequences sequentially, transformers process the entire sequence at once in parallel.
 The attention mechanism creates direct connections between all inputs in a sequence, allowing the model to focus on the most relevant parts as needed. This is akin to how we pay visual attention to certain regions in an image.
+Human comprehension integrates context fluidly. When reading text, we interpret the meaning of each word in relation to the surrounding words and phrases. Transformers mimic this contextual processing through multi-headed self-attention. The model learns contextual relationships between all words in a passage, not just sequential dependencies.
+This flexible contextual processing provides advantages for real-world NLP applications. In translation, transformers excel at carrying over contextual meaning from the source to target languages, something lost with RNNs. The model dynamically attends to the most relevant context to produce fluent translations.
+Similarly for text summarization, the transformer can pinpoint the most salient points in a document by modeling the full context. This mirrors human understanding of picking out key ideas from contextual information.
+Overall, by incorporating contextual processing with parallel attention, transformers achieve state-of-the-art results on many language tasks. Their ability to model soft contextual connections matches human-level language understanding better than rigid sequential modeling. Transformers usher in a new contextual paradigm for natural language processing
 
 ### Attention: Finding What Matters
 At its core, attention is about focusing on what's relevant. Just like we pay visual attention to certain objects in a scene, attention in deep learning models lets them focus on pertinent parts of their input.
