@@ -20,7 +20,7 @@ These similarity scores are calculated using functions like the scaled dot produ
 Self-attention, the core innovation behind transformers, is conceptually simple. For each input, it calculates attention scores against all other inputs based on their relatedness. Highly related inputs get higher scores.
 These scores determine a weighted sum representing the relevant context for each input. By focusing on the most important parts of the sequence, self-attention provides the right contextual representation to encode the inputs effectively.
 In self-attention, the queries, keys and values all come from the same place - different positions of the input sequence. This allows relating different parts of the sequence to each other. For example, a token could attend to previous tokens that provide context for understanding it.
-For some curious rechnical readers, let me put the code snippets for the attention function as follows. 
+For some curious technical readers, let me put the code snippets for the attention function as follows. 
 
     # Attention implementation (Scaled Dot Product)
     def attention(query_vec, key_mat, value_mat, mask=None, dropout=None):
@@ -37,7 +37,7 @@ For some curious rechnical readers, let me put the code snippets for the attenti
 
         # Apply optional dropout 
         if dropout is not None:
-        attention_weights = dropout(attention_weights)
+            attention_weights = dropout(attention_weights)
 
         # Calculate weighted average of values
         attention_output = torch.matmul(attention_weights, value_mat)
