@@ -77,6 +77,9 @@ Specifically, multi-head attention is used in three key places within the transf
 
 By employing multi-head attention, transformers can jointly process information at different positions from different representational subspaces. This provides expressive power to learn complex functions mapping input sequences to output sequences. Multi-head attention has been a crucial innovation for creating effective deep attentional models. 
 
+![](/images/1_3aO7OEvLZZm7h8bVXlgRZQ.gif)
+![](/images/1__-AYcynG8pgLkCdUQmuzFA.gif)
+
 ## Behind the Magic - A High-Level View
 Fundamentally, the transformer consists of an encoder and a decoder. The encoder maps the input to a rich, contextual representation. The decoder then uses this representation to generate the output.
 In NLP, the encoder operates on the input text while the decoder generates the translated or summarized text. For image processing, the encoder processes the input image and the decoder reconstructs or generates it.
