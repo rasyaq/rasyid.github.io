@@ -53,6 +53,18 @@ For some curious technical readers, let me put the code snippets for the attenti
         return attention_output, attention_weights
 
 
+### Multi-Head Attention: A Key Building Block of Transformers
+One of the most important attentional components is multi-head attention. This allows the model to jointly attend to information from different representation subspaces at different positions.
+At its core, multi-head attention involves projecting the inputs into multiple "heads", where each head represents a different attentional representation. Within each head, scaled dot-product attention is applied between the query, key, and value vectors. This produces an output for each head.
+
+The different heads are then concatenated and projected again to the final values. This multi-head approach provides the benefits of both summarizing the inputs and focusing on different positional and representational relationships.
+Specifically, multi-head attention is used in three key places within the transformer architecture:
+
+- Encoder Self-Attention: The encoder queries, keys, and values all come from the encoder's input. This allows each position to attend to all other positions and capture contextual relationships.
+- Decoder Self-Attention: The decoder queries, keys, and values come from the previous decoder outputs. Masking prevents leftward information flow and maintains auto-regressive order.
+- Encoder-Decoder Attention: The decoder queries come from the decoder, while the encoder keys and values are projected to the decoder. This bridges both components.
+
+By employing multi-head attention, transformers can jointly process information at different positions from different representational subspaces. This provides expressive power to learn complex functions mapping input sequences to output sequences. Multi-head attention has been a crucial innovation for creating effective deep attentional models. 
 
 ## Behind the Magic - A High-Level View
 Fundamentally, the transformer consists of an encoder and a decoder. The encoder maps the input to a rich, contextual representation. The decoder then uses this representation to generate the output.
