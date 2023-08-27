@@ -83,6 +83,9 @@ In NLP, the encoder operates on the input text while the decoder generates the t
 The encoder itself has two components - a self-attention layer and a feedforward network. Self-attention identifies important context across the entire input. The feedforward network further refines this representation.
 The decoder also has a cross-attention layer that focuses on relevant parts of the encoder output. This allows the decoder to produce the output while looking at the appropriate input context.
 
+![](/images/seq2seq-enc-dec-attn.gif)
+Source: https://alvinntnu.github.io/NTNU_ENC2045_LECTURES/temp/dl-seq-to-seq-types.html
+
 ## Simpler Than It Looks!
 While transformers enable complex modeling, the implementation involves simple, repeated blocks of self-attention, cross-attention and feedforward layers. This repetitive structure makes transformers easy to optimize and scale to huge datasets across diverse domains.
 
