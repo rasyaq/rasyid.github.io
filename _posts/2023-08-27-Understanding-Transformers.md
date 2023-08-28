@@ -9,7 +9,7 @@ Transformers lead a new era of contextual sequence modeling through their pionee
 
 ![](/images/transformers-diagram-depth.JPG)
 
-Source: http://peterbloem.nl/blog/transformers
+Image source: http://peterbloem.nl/blog/transformers
 
 The attention mechanism creates direct connections between all inputs in a sequence, allowing the model to focus on the most relevant parts as needed. This is akin to how we pay visual attention to certain regions in an image.
 Human comprehension integrates context fluidly. When reading text, we interpret the meaning of each word in relation to the surrounding words and phrases. Transformers mimic this contextual processing through multi-headed self-attention. The model learns contextual relationships between all words in a passage, not just sequential dependencies.
@@ -80,7 +80,7 @@ By employing multi-headed attention, transformers can jointly process informatio
 ![](/images/1_3aO7OEvLZZm7h8bVXlgRZQ.gif)
 ![](/images/1__-AYcynG8pgLkCdUQmuzFA.gif)
 
-Source: https://yashugupta-gupta11.medium.com/in-and-out-of-transformers-attention-is-all-you-need-deep-nlp-horse-260b97988278
+Image source: https://yashugupta-gupta11.medium.com/in-and-out-of-transformers-attention-is-all-you-need-deep-nlp-horse-260b97988278
 
 ## Behind the Magic - A High-Level View
 Fundamentally, the transformer consists of an encoder and a decoder. The encoder maps the input to a rich, contextual representation. The decoder then uses this representation to generate the output.
@@ -89,7 +89,7 @@ The encoder itself has two components - a self-attention layer and a feedforward
 The decoder also has a cross-attention layer that focuses on relevant parts of the encoder output. This allows the decoder to produce the output while looking at the appropriate input context.
 
 ![](/images/seq2seq-enc-dec-attn.gif)
-Source: https://alvinntnu.github.io/NTNU_ENC2045_LECTURES/temp/dl-seq-to-seq-types.html
+Image source: https://alvinntnu.github.io/NTNU_ENC2045_LECTURES/temp/dl-seq-to-seq-types.html
 
 ## Simpler Than It Looks!
 While transformers enable complex modeling, the implementation involves simple, repeated blocks of self-attention, cross-attention and feedforward layers. This repetitive structure makes transformers easy to optimize and scale to huge datasets across diverse domains.
