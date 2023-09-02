@@ -94,3 +94,11 @@ Image source: https://alvinntnu.github.io/NTNU_ENC2045_LECTURES/temp/dl-seq-to-s
 ## Simpler Than It Looks!
 While transformers enable complex modeling, the implementation involves simple, repeated blocks of self-attention, cross-attention and feedforward layers. This repetitive structure makes transformers easy to optimize and scale to huge datasets across diverse domains.
 
+The self-attention layer connects different positions of the input sequence to build a representation that incorporates contextual information from the full sequence. The feedforward network processes each position identically to extract features.
+
+During training, the input data is converted to embeddings which are fed to the encoder. The encoder output and target tokens are given as input to the decoder, also composed of similar blocks. The decoder predicts the next token, and the loss between predicted and actual target tokens is used to update the model weights. 
+
+During inference, the trained encoder processes the input sequence to generate encoder representations. The trained decoder takes these representations and predicts the output sequence token by token in an autoregressive manner. The self-attention and feedforward layers in the Transformer enable modeling both local and global dependencies.
+
+In this way, the Transformer architecture processes sequences in parallel to learn contextual representations during training, and generates outputs autoregressively during inference. The key components are self-attention layers to model dependencies and feedforward layers for feature extraction.
+
