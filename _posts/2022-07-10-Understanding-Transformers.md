@@ -2,7 +2,7 @@
 Transformers have emerged as one of the most influential innovations in deep learning. Originally introduced for natural language processing (NLP) tasks like translation and text generation, transformers are also driving advances across computer vision, speech recognition, and other AI domains. Transformers have catalyzed major advances in artificial intelligence, particularly through powering large language models (LLMs) and foundation models. This enabled a scale-up in model size unprecedented in deep learning. Transformers gave rise to large language models like GPT (Generative Pre-trained Transformer) and one chatbot application that took the world by storm: OpenAI's ChatGPT.
 But what exactly are transformers and how do they work? In this post, I’ll unpack the transformer architecture at an intuitive level.
 
-## A Picture is Worth a Thousand Words
+## Attention is Worth a Contextualized Thousand Words
 Transformers lead a new era of contextual sequence modeling through their pioneering attention mechanisms. For complex language tasks, transformers capture the interdependencies between words in a contextualized manner that recurrent models cannot. While recurrent neural networks (RNNs) process sequences sequentially, transformers process the entire sequence at once in parallel.
 
 ![](/images/transformers-diagram.JPG)
