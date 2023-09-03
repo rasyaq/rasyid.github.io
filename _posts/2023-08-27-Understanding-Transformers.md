@@ -53,8 +53,8 @@ $$Attention(Q, K, V) = softmax(\frac{QK^T}{\sqrt{d_k}})V$$
 ### Code Snippet
 For some curious technical readers, let me put the code snippets for the attention function as follows. 
 
-    # Attention implementation (Scaled Dot Product). Note: without masking & dropout (optional)
-    def attention(query_vec, key_mat, value_mat, mask=None, dropout=None):
+    # Attention implementation (Scaled Dot Product) using Pytorch library. 
+    def attention(query_vec, key_mat, value_mat):
         # Calculate dot product between query and keys
         key_dim = query_vec.size(-1)
         relevance_scores = torch.matmul(query_vec, key_mat.transpose(-2, -1)) / math.sqrt(key_dim)
