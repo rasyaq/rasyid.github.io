@@ -20,6 +20,12 @@ Successive GPT models have followed a trend of scaling up size and training data
 
 GPT-3 displays eerily human-like writing abilities, even though it has no understanding of the content it generates. Its capabilities and potential societal impacts have sparked heated debate.
 
+![](/images/06-gpt3-embedding.gif)
+
+![](/images/05-gpt3-generate-output-context-window.gif)
+
+Image source: http://jalammar.github.io/how-gpt3-works-visualizations-animations/
+
 Meanwhile, the GPT approach keeps spreading to new domains like computer vision and multimodal applications. Models like DALL-E 2 can generate realistic images from text captions. The line between AI creativity and mimicking human output continues to blur.
 
 The journey from Transformers to GPT illustrates an acceleration in AI capabilities fueled bycombining generalizable architectures with vast computational resources and data.
