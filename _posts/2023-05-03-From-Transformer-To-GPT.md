@@ -4,7 +4,7 @@
 
 Transformers have taken the world by storm in particular after the introduction of chatGPT, an AI chatbot application powered other than nothing but Transformers. First introduced in 2017, these novel neural network architectures rapidly became the dominant approach across natural language processing and computer vision. 
 
-At the heart of Transformers are self-attention mechanisms that allow modeling long-range dependencies in sequences. For a sequence of word inputs $x1, x2, ..., x_n$, they are being treated as query $Q$, key $K$, and value $K$ self-attention calculates attention scores between each pair of words:
+At the heart of Transformers are self-attention mechanisms that allow modeling long-range dependencies in sequences. For a sequence of word inputs $x1, x2, ..., x_n$, they are being treated as query $Q$, key $K$, and value $K$ within self-attention mechanism that calculates attention scores between each pair of words:
 
 $$Attention(Q, K, V) = softmax(\frac{QK^T}{\sqrt{d_k}})V$$
 
