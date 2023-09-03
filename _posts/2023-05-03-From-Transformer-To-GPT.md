@@ -10,7 +10,7 @@ $$Attention(Q, K, V) = softmax(\frac{QK^T}{\sqrt{d_k}})V$$
 
 where $Q$ and $K$ are learned projection matrices that map the inputs to a queries and keys vector space. This gives a matrix of attention scores used to aggregate the values, enabling modeling context from the entire sequence.
 
-For the readers to understand the gist of Transformers on technical and intuitionn level, please read my previous notes: [https://rasyaq.github.io/2022/07/10/Understanding-Transformers.html](https://rasyaq.github.io/2023/02/10/Understanding-Transformers.html)
+For the readers who want to understand the gist of Transformers on the intuition and a glimpse of technical level, please read my previous notes: [https://rasyaq.github.io/2022/07/10/Understanding-Transformers.html](https://rasyaq.github.io/2023/02/10/Understanding-Transformers.html)
 
 In 2018, researchers at OpenAI took Transformers to the next level with the Generative Pre-trained Transformer (GPT). GPT was pre-trained on a massive text corpus to learn universal language representations that could then be fine-tuned for downstream tasks.
 
