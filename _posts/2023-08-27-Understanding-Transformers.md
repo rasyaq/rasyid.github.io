@@ -38,6 +38,18 @@ Next, a softmax layer turns the scores into normalized probabilities. This assig
 
 $$y_1, \cdots, y_n = softmax (x_i, \cdots, x_n)$$
 
+Let's transform the above equation into a more concrete variables flowing inside the Transformers.
+Practically, we pack multiple query vectors together into a matrix $Q$. The key vectors $K$ and value vectors $V$ are also stacked together into matrices. This allows us to compute the attention function for the full set of queries efficiently in parallel.
+Specifically, we take the dot product of the query matrix $Q$ with the transpose of the key matrix $K$ to generate the attention scores. This results in each query vector being matched with all the key vectors. The attention score matrix is then scaled and normalized using the softmax function.
+
+Finally, the normalized attention score matrix is multiplied with the value matrix $V$ to generate the output matrix. This output matrix contains the weighted sum of values for each query, where the weight assigned to each value is determined by the attention scores calculated.
+In this way, stacking multiple queries, keys and values into matrices allows the attention function to be computed for the full set in a highly parallelized implementation. The matrix calculations help attend to all the relevant keys for each query simultaneously.
+
+Mathematically, the above processes are represented as follows:
+
+$$Attention(Q, K, V) = softmax(\frac{QK^T}{\sqrt{d_k}})V$$
+
+
 ### Code Snippet
 For some curious technical readers, let me put the code snippets for the attention function as follows. 
 
