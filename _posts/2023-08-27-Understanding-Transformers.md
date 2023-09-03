@@ -57,10 +57,10 @@ For some curious technical readers, let me put the code snippets for the attenti
     import torch 
     import torch.nn.functional as F
     
-    def attention(query_vec, key_mat, value_mat):
+    def attention(query_mat, key_mat, value_mat):
         # Calculate dot product between query and keys
-        key_dim = query_vec.size(-1)
-        relevance_scores = torch.matmul(query_vec, key_mat.transpose(-2, -1)) / math.sqrt(key_dim)
+        key_dim = query_mat.size(-1)
+        relevance_scores = torch.matmul(query_mat, key_mat.transpose(-2, -1)) / math.sqrt(key_dim)
   
         # Convert scores to probabilites  
         attention_weights = F.softmax(relevance_scores, dim=-1)
