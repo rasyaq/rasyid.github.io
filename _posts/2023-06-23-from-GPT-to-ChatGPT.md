@@ -32,10 +32,27 @@ The $W$ matrices refer to the trainable weight matrices used to transform the to
 
 ## The Birth of ChatGPT
 While earlier GPT versions were optimized for text generation capabilities, ChatGPT specialized in more natural conversational abilities. OpenAI trained ChatGPT on a large dataset of dialog conversations generated through human demonstrators interacting in conversation. A key innovation was the use of reinforcement learning from human feedback (RLHF) to train the model to converse responsively. 
-In RLHF, the model is rewarded for responding appropriately to conversation context, admitting ignorance rather than guessing, and refusing inappropriate requests. This reinforcement signal from human evaluators provides feedback to enhance the model's conversational abilities.
+In RLHF, the model is rewarded for responding appropriately to conversation context, admitting ignorance rather than guessing, and refusing inappropriate requests. This reinforcement signal from human evaluators provides feedback to enhance the model's conversational abilities. One of key components of RLHF is Proximal Policy Optimization (PPO).
+
+The goal of PPO is to maximize the expected return $J(\theta)$ of a stochastic policy $\pi_\theta(a_t|s_t)$ over all timesteps $t$, where $\theta$ are the policy parameters, $s_t$ is the state and $a_t$ is the action.
+The PPO objective function contains three main terms:
+1. Clipped Surrogate Loss
+$L_{CLIP}(\theta) = \mathbb{E}_{t}[\min(r_t(\theta) \cdot A_t, \text{clip}(r_t(\theta), 1 - \varepsilon, 1 + \varepsilon) \cdot A_t)]$
+Where $r_t(\theta) = \frac{\pi_\theta(a_t|s_t)}{\pi_{\text{old}}(a_t|s_t)}$ is the probability ratio between new and old policies. Clipping $r_t$ prevents too large policy updates.
+2. Value Function Loss
+$L_{VF}(\theta) = \mathbb{E}_{t}[(V_\theta(s_t) - V_{\text{targ}})^2]$
+Where $V_\theta$ is the estimated state value by the policy network, and $V_{\text{targ}}$ is the target state value. This encourages value prediction to be accurate.
+3. Entropy Bonus
+$L_H(\theta) = \mathbb{E}_{t}[\pi_\theta(a_t|s_t) \cdot \log \pi_\theta(a_t|s_t)]$
+Adding entropy bonus encourages exploration and prevents premature convergence.
+The overall PPO loss function is:
+$L_{PPO}(\theta) = L_{CLIP}(\theta) - c_1 \cdot L_{VF}(\theta) + c_2 \cdot L_H(\theta)$
+Where $c_1, c_2$ are coefficients to balance the terms. $\theta$ is updated via stochastic gradient ascent on $L_{PPO}$.
+So in summary, PPO uses clipped surrogate objective, value function prediction, and entropy regularization to achieve stable and sample efficient policy optimization for large policies like ChatGPT. 
 
 ![](/images/chatgpt_process.png)
 Image source: https://www.linkedin.com/pulse/unleashing-power-chat-gpt-beginners-guide-manoz-acharya/
+
 
 Architecturally, ChatGPT leverages a decoder-only transformer akin to GPT-3 to model the conditional probability over token sequences. The distinguishing innovations are in the training objective and training data. Optimization for dialog conversation instead of monologue text generation powers ChatGPT's nuanced conversational skills.
 The training dataset of genuine dialog exchanges creates data better suited for chatbot-style interaction, rather than the monologue-formatted text GPT was trained on. Modeling genuine dialog context enables ChatGPT's capabilities in follow-up coherence, consistency, and overall conversational flow. 
