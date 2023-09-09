@@ -11,7 +11,9 @@ Successive iteratively larger versions of GPT like GPT-2, GPT-3, and the recentl
 
 ## The Math of GPT
 Mathematically, GPT relies on the transformer decoder architecture and is trained to model the probability p(u) of a sequence of tokens u = (u1, ..., uT) using the chain rule to decompose the joint probability into conditional probabilities:
-$p(u) = Π_p^T=1 p(u_t | u_1, ..., u_{t-1})$ 
+
+$p(u) = Π_p^{T=1} p(u_t | u_1, ..., u_{t-1})$ 
+
 where the context vector $h_i$ for predicting next token ui is derived by applying self-attention on the prior subsequence u1 to ut-1.
 
 ## The birth of ChatGPT
