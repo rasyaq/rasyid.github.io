@@ -11,11 +11,22 @@ This transfer learning methodology outperformed training on the end tasks from s
 Successive iteratively larger versions of GPT like GPT-2, GPT-3, and the recently announced GPT-4 have progressively increased the number of parameters and scale of data used for pre-training, with GPT-4 expected to utilize over 100 trillion parameters, far exceeding the already enormous 175 billion parameters in GPT-3. The massive scale of data and model size has enabled remarkable generative capabilities even in a zero-shot setting without any task-specific fine-tuning.
 
 ## The Math of GPT
-Mathematically, GPT relies on the transformer decoder architecture and is trained to model the probability $p(u)$ of a sequence of tokens $u = (u_1, ..., u_T)$ using the chain rule to decompose the joint probability into conditional probabilities:
+In the GPT architecture, each token $u_i$ in the sequence $u = (u_1, ..., u_T)$ is represented by a context vector $h_i$.  Mathematically, GPT relies on the transformer decoder architecture and is trained to model the probability $p(u)$ of a sequence of tokens $u$ using the chain rule to decompose the joint probability into conditional probabilities:
 
 $$p(u) = Π_p^{T=1} p(u_t | u_1, ..., u_{t-1})$$ 
 
-where the context vector $h_i$ for predicting next token ui is derived by applying self-attention on the prior subsequence $u_1$ to $u_{t-1}$.
+where the context vector $h_i$ for predicting next token $u_i$ is derived by applying self-attention on the prior subsequence $u_1$ to $u_{t-1}$.
+
+This context vector encodes the relevant contextual information from the previous tokens $(u_1 to u_{i-1})$ that can help predict the next token ui.
+The context vector hi is obtained by applying multi-headed self-attention on the previous token embeddings. Specifically, the self-attention layer takes as input the sequence of token embeddings (e1, ..., ei-1) up to position i-1. It draws global dependencies between these token embeddings to create a new contextualized representation for each token.
+Mathematically, a self-attention head computes attention scores between each pair of tokens $(e_j, e_k)$ using:
+
+$$attention(e_j, e_k) = (WQej)^T(WKe_k)$$
+where WQ and WK are projection matrices that transform the embeddings into "query" and "key" vectors respectively.
+These attention scores are normalized into a probability distribution using softmax. The attention distribution is used to compute a weighted average of the "value" vectors Vek, giving us the final context-aware token representation hj for token j.
+Multiple such self-attention heads are used, whose outputs are concatenated to obtain the final context vector hi that incorporates contextual information from previous tokens.
+So in summary, hi encodes relevant semantic and syntactic context from earlier tokens via self-attention, which allows GPT to model long-range dependencies in text and generate tokens conditioned on the appropriate context. 
+
 
 ## The Birth of ChatGPT
 While earlier GPT versions were optimized for text generation capabilities, ChatGPT specialized in more natural conversational abilities. OpenAI trained ChatGPT on a large dataset of dialog conversations generated through human demonstrators interacting in conversation. A key innovation was the use of reinforcement learning from human feedback (RLHF) to train the model to converse responsively. 
