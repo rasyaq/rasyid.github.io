@@ -37,16 +37,24 @@ In RLHF, the model is rewarded for responding appropriately to conversation cont
 The goal of PPO is to maximize the expected return $J(\theta)$ of a stochastic policy $\pi_\theta(a_t|s_t)$ over all timesteps $t$, where $\theta$ are the policy parameters, $s_t$ is the state and $a_t$ is the action.
 The PPO objective function contains three main terms:
 1. Clipped Surrogate Loss
-$L_{CLIP}(\theta) = \mathbb{E}_{t}[\min(r_t(\theta) \cdot A_t, \text{clip}(r_t(\theta), 1 - \varepsilon, 1 + \varepsilon) \cdot A_t)]$
-Where $r_t(\theta) = \frac{\pi_\theta(a_t|s_t)}{\pi_{\text{old}}(a_t|s_t)}$ is the probability ratio between new and old policies. Clipping $r_t$ prevents too large policy updates.
+
+$$L_{CLIP}(\theta) = \mathbb{E}_{t}[\min(r_t(\theta) \cdot A_t, \text{clip}(r_t(\theta), 1 - \varepsilon, 1 + \varepsilon) \cdot A_t)]$$
+Where 
+$$r_t(\theta) = \frac{\pi_\theta(a_t|s_t)}{\pi_{\text{old}}(a_t|s_t)}$$ is the probability ratio between new and old policies. Clipping $r_t$ prevents too large policy updates.
+
 2. Value Function Loss
 $L_{VF}(\theta) = \mathbb{E}_{t}[(V_\theta(s_t) - V_{\text{targ}})^2]$
 Where $V_\theta$ is the estimated state value by the policy network, and $V_{\text{targ}}$ is the target state value. This encourages value prediction to be accurate.
+
 3. Entropy Bonus
-$L_H(\theta) = \mathbb{E}_{t}[\pi_\theta(a_t|s_t) \cdot \log \pi_\theta(a_t|s_t)]$
+
+$$L_H(\theta) = \mathbb{E}_{t}[\pi_\theta(a_t|s_t) \cdot \log \pi_\theta(a_t|s_t)]$$
+
 Adding entropy bonus encourages exploration and prevents premature convergence.
 The overall PPO loss function is:
-$L_{PPO}(\theta) = L_{CLIP}(\theta) - c_1 \cdot L_{VF}(\theta) + c_2 \cdot L_H(\theta)$
+
+$$L_{PPO}(\theta) = L_{CLIP}(\theta) - c_1 \cdot L_{VF}(\theta) + c_2 \cdot L_H(\theta)$$
+
 Where $c_1, c_2$ are coefficients to balance the terms. $\theta$ is updated via stochastic gradient ascent on $L_{PPO}$.
 So in summary, PPO uses clipped surrogate objective, value function prediction, and entropy regularization to achieve stable and sample efficient policy optimization for large policies like ChatGPT. 
 
