@@ -1,3 +1,4 @@
+#The Evolution of Large Language Models: From Transformers to ChatGPT 
 
 ## When It All Began
 First introduced in 2017 by Google Researcher, the transformer architecture that utilized the transformer block consisting solely of attention mechanisms represented a departure from the convolutional and recurrent layers used in prior state-of-the-art models, 
@@ -25,6 +26,9 @@ Image source: https://www.linkedin.com/pulse/unleashing-power-chat-gpt-beginners
 
 Architecturally, ChatGPT leverages a decoder-only transformer akin to GPT-3 to model the conditional probability over token sequences. The distinguishing innovations are in the training objective and training data. Optimization for dialog conversation instead of monologue text generation powers ChatGPT's nuanced conversational skills.
 The training dataset of genuine dialog exchanges creates data better suited for chatbot-style interaction, rather than the monologue-formatted text GPT was trained on. Modeling genuine dialog context enables ChatGPT's capabilities in follow-up coherence, consistency, and overall conversational flow. 
+
+![](/images/2022-Alan-D-Thompson-ChatGPT-Sparrow-Rev-0d.png)
+Image source: [https://www.linkedin.com/pulse/unleashing-power-chat-gpt-beginners-guide-manoz-acharya/](https://lifearchitect.ai/chatgpt/)
 
 ChatGPT's launch in November 2022 sparked excitement over its human-like conversational capabilities and also raised many ethical concerns around potential for harm, factual accuracy, and transparency about its true capabilities necessitating thorough discussion.
 The rapid progress from transformers to ChatGPT over 5 years illustrates the potential of combining architectures like transformers with techniques like pre-training, reinforcement learning, and conversational training data. While modeling wide knowledge and reasoning in conversation remains challenging, the pace of progress promises more impressive capabilities emerging from continued research and compute scale gains as evidenced by the pending launch of GPT-4.
