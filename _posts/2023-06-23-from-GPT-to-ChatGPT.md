@@ -1,4 +1,4 @@
-# The Path to More Human-Like AI: Charting the Progression from Transformers to ChatGPT and the Cutting Edge of Large Language Modeling 
+# The Path to More Human-Like AI: The Progression from Transformers to ChatGPT 
 
 ## When It All Began
 First introduced in 2017 by Google Researchers, the transformer architecture that utilized the transformer block consisting solely of attention mechanisms represented a departure from the convolutional and recurrent layers used in prior state-of-the-art models, 
