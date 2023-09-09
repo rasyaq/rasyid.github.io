@@ -1,18 +1,18 @@
 
-## Where it all began
+## When It All Began
 First introduced in 2017 by Google Researcher, the transformer architecture that utilized the transformer block consisting solely of attention mechanisms represented a departure from the convolutional and recurrent layers used in prior state-of-the-art models, 
 enabling modeling of longer-range dependencies in sequence data and greater parallelizability, achieving superior performance on translation tasks over models reliant on convolution or recurrence. 
 This demonstrated the promise of attention-based networks for advancing language modeling and understanding tasks.
 
-## The birth of GPT
+## The Birth of GPT
 Building upon the capabilities of the transformer architecture, OpenAI introduced the Generative Pre-trained Transformer (GPT) in 2018 which pioneered the pre-trained language model approach of first pre-training a model on massive unlabeled corpora in an unsupervised manner to create a general language representation before fine-tuning on downstream tasks. 
 This transfer learning methodology outperformed training on the end tasks from scratch, underscoring the value of pre-training on large unlabeled data. 
 Successive iteratively larger versions of GPT like GPT-2, GPT-3, and the recently announced GPT-4 have progressively increased the number of parameters and scale of data used for pre-training, with GPT-4 expected to utilize over 100 trillion parameters, far exceeding the already enormous 175 billion parameters in GPT-3. The massive scale of data and model size has enabled remarkable generative capabilities even in a zero-shot setting without any task-specific fine-tuning.
 
-## The math of GPT
+## The Math of GPT
 Mathematically, GPT relies on the transformer decoder architecture and is trained to model the probability p(u) of a sequence of tokens u = (u1, ..., uT) using the chain rule to decompose the joint probability into conditional probabilities:
-p(u) = ΠpT=1 p(ut | u1, ..., ut-1) 
-where the context vector hi for predicting next token ui is derived by applying self-attention on the prior subsequence u1 to ut-1.
+$p(u) = Π_p^T=1 p(u_t | u_1, ..., u_{t-1})$ 
+where the context vector $h_i$ for predicting next token ui is derived by applying self-attention on the prior subsequence u1 to ut-1.
 
 ## The birth of ChatGPT
 While earlier GPT versions were optimized for text generation capabilities, ChatGPT specialized in more natural conversational abilities. OpenAI trained ChatGPT on a large dataset of dialog conversations generated through human demonstrators interacting in conversation. A key innovation was the use of reinforcement learning from human feedback (RLHF) to train the model to converse responsively. 
