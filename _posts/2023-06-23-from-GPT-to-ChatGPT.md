@@ -16,7 +16,7 @@ $p(u) = Π_p^{T=1} p(u_t | u_1, ..., u_{t-1})$
 
 where the context vector $h_i$ for predicting next token ui is derived by applying self-attention on the prior subsequence $u_1$ to $u_{t-1}$.
 
-## The birth of ChatGPT
+## The Birth of ChatGPT
 While earlier GPT versions were optimized for text generation capabilities, ChatGPT specialized in more natural conversational abilities. OpenAI trained ChatGPT on a large dataset of dialog conversations generated through human demonstrators interacting in conversation. A key innovation was the use of reinforcement learning from human feedback (RLHF) to train the model to converse responsively. 
 In RLHF, the model is rewarded for responding appropriately to conversation context, admitting ignorance rather than guessing, and refusing inappropriate requests. This reinforcement signal from human evaluators provides feedback to enhance the model's conversational abilities.
 
