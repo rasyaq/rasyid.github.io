@@ -21,12 +21,11 @@ This context vector encodes the relevant contextual information from the previou
 The context vector hi is obtained by applying multi-headed self-attention on the previous token embeddings. Specifically, the self-attention layer takes as input the sequence of token embeddings (e1, ..., ei-1) up to position i-1. It draws global dependencies between these token embeddings to create a new contextualized representation for each token.
 Mathematically, a self-attention head computes attention scores between each pair of tokens $(e_j, e_k)$ using:
 
-$$attention(e_j, e_k) = (WQej)^T(WKe_k)$$
-where WQ and WK are projection matrices that transform the embeddings into "query" and "key" vectors respectively.
-These attention scores are normalized into a probability distribution using softmax. The attention distribution is used to compute a weighted average of the "value" vectors Vek, giving us the final context-aware token representation hj for token j.
-Multiple such self-attention heads are used, whose outputs are concatenated to obtain the final context vector hi that incorporates contextual information from previous tokens.
-So in summary, hi encodes relevant semantic and syntactic context from earlier tokens via self-attention, which allows GPT to model long-range dependencies in text and generate tokens conditioned on the appropriate context. 
-
+$$\text{attention}(e_j, e_k) = (W_Qe_j)^T(W_Ke_k)$$
+where $W_Q$ and $W_K$ are projection matrices that transform the embeddings into "query" and "key" vectors respectively.
+These attention scores are normalized into a probability distribution using softmax. The attention distribution is used to compute a weighted average of the "value" vectors $Ve_k$, giving us the final context-aware token representation $h_j$ for token $j$.
+Multiple such self-attention heads are used, whose outputs are concatenated to obtain the final context vector $h_i$ that incorporates contextual information from previous tokens.
+The $W$ matrices refer to the trainable weight matrices used to transform the token embeddings in the self-attention calculations. For example, $W_Q$ projects embeddings into "query" vectors, $W_K$ into "key" vectors, and $W_V$ into "value" vectors. 
 
 ## The Birth of ChatGPT
 While earlier GPT versions were optimized for text generation capabilities, ChatGPT specialized in more natural conversational abilities. OpenAI trained ChatGPT on a large dataset of dialog conversations generated through human demonstrators interacting in conversation. A key innovation was the use of reinforcement learning from human feedback (RLHF) to train the model to converse responsively. 
