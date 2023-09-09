@@ -10,11 +10,11 @@ This transfer learning methodology outperformed training on the end tasks from s
 Successive iteratively larger versions of GPT like GPT-2, GPT-3, and the recently announced GPT-4 have progressively increased the number of parameters and scale of data used for pre-training, with GPT-4 expected to utilize over 100 trillion parameters, far exceeding the already enormous 175 billion parameters in GPT-3. The massive scale of data and model size has enabled remarkable generative capabilities even in a zero-shot setting without any task-specific fine-tuning.
 
 ## The Math of GPT
-Mathematically, GPT relies on the transformer decoder architecture and is trained to model the probability p(u) of a sequence of tokens u = (u1, ..., uT) using the chain rule to decompose the joint probability into conditional probabilities:
+Mathematically, GPT relies on the transformer decoder architecture and is trained to model the probability $p(u)$ of a sequence of tokens $u = (u_1, ..., u_T)$ using the chain rule to decompose the joint probability into conditional probabilities:
 
 $p(u) = Π_p^{T=1} p(u_t | u_1, ..., u_{t-1})$ 
 
-where the context vector $h_i$ for predicting next token ui is derived by applying self-attention on the prior subsequence u1 to ut-1.
+where the context vector $h_i$ for predicting next token ui is derived by applying self-attention on the prior subsequence $u_1$ to $u_{t-1}$.
 
 ## The birth of ChatGPT
 While earlier GPT versions were optimized for text generation capabilities, ChatGPT specialized in more natural conversational abilities. OpenAI trained ChatGPT on a large dataset of dialog conversations generated through human demonstrators interacting in conversation. A key innovation was the use of reinforcement learning from human feedback (RLHF) to train the model to converse responsively. 
