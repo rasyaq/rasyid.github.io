@@ -52,7 +52,7 @@ So in summary, PPO uses clipped surrogate objective, value function prediction, 
 Image source: https://www.linkedin.com/pulse/unleashing-power-chat-gpt-beginners-guide-manoz-acharya/
 
 
-Architecturally, ChatGPT leverages a decoder-only transformer akin to GPT-3 to model the conditional probability over token sequences. The distinguishing innovations are in the training objective and training data. Optimization for dialog conversation instead of monologue text generation powers ChatGPT's nuanced conversational skills.
+Architecturally, ChatGPT leverages a decoder-only transformer similar to GPT-3 to model the conditional probability over token sequences. The distinguishing innovations are in the training objective and training data. Optimization for dialog conversation instead of monologue text generation powers ChatGPT's nuanced conversational skills.
 The training dataset of genuine dialog exchanges creates data better suited for chatbot-style interaction, rather than the monologue-formatted text GPT was trained on. Modeling genuine dialog context enables ChatGPT's capabilities in follow-up coherence, consistency, and overall conversational flow. 
 
 ![](/images/2022-Alan-D-Thompson-ChatGPT-Sparrow-Rev-0d.png)
