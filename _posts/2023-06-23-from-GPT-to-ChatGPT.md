@@ -1,4 +1,4 @@
-#The Evolution of Large Language Models: From Transformers to ChatGPT 
+# The Evolution of Large Language Models: From Transformers to ChatGPT 
 
 ## When It All Began
 First introduced in 2017 by Google Researcher, the transformer architecture that utilized the transformer block consisting solely of attention mechanisms represented a departure from the convolutional and recurrent layers used in prior state-of-the-art models, 
