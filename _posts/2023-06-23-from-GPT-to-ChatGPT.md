@@ -40,12 +40,15 @@ The goal of PPO is to maximize the expected return $J(\theta)$ of a stochastic p
 The PPO objective function contains three main terms:
 
 1. Clipped Surrogate Loss
+
 This is a method to update a policy neural network in a stable way. Normally we update networks to reduce a loss function. But with reinforcement learning the loss can spike up and down violently. Clipping limits the amount the loss can change during an update, keeping training smooth.
 
 2. Value Function Loss
+
 The value function predicts how good a state is. We train it by taking its prediction, seeing the reward we actually get, and updating the network to reduce the difference. This is the value function loss - it's just the error between its prediction and the true value. Minimizing this "loss" makes the value predictions more accurate.
 
 3. Entropy Bonus
+
 Entropy measures how randomly a policy acts. High entropy means totally random. Low entropy means very predictable. Adding an entropy bonus rewards the policy for being more random initially. This encourages exploration to find novel solutions. As training progresses, the bonus is reduced so the policy exploits the best solution found.
 
 In summary, Clipped loss keeps policy updates smooth, Value function loss improves state value predictions, and Entropy bonus incentivizes exploration then exploitation.
