@@ -25,20 +25,30 @@ The context vector $h_i$ is obtained by applying multi-headed self-attention on 
 Mathematically, a self-attention head computes attention scores between each pair of tokens $(e_j, e_k)$ using:
 
 $$\text{Attention}(e_j, e_k) = (W_Qe_j)^T(W_Ke_k)$$
+
 where $W_Q$ and $W_K$ are projection matrices that transform the embeddings into "query" and "key" vectors respectively.
+
 These attention scores are normalized into a probability distribution using softmax. The attention distribution is used to compute a weighted average of the "value" vectors $Ve_k$, giving us the final context-aware token representation $h_j$ for token $j$.
 Multiple such self-attention heads are used, whose outputs are concatenated to obtain the final context vector $h_i$ that incorporates contextual information from previous tokens.
 The $W$ matrices refer to the trainable weight matrices used to transform the token embeddings in the self-attention calculations. For example, $W_Q$ projects embeddings into "query" vectors, $W_K$ into "key" vectors, and $W_V$ into "value" vectors. 
 
 ## The Birth of ChatGPT
 While earlier GPT versions were optimized for text generation capabilities, ChatGPT specialized in more natural conversational abilities. OpenAI trained ChatGPT on a large dataset of dialog conversations generated through human demonstrators interacting in conversation. A key innovation was the use of reinforcement learning from human feedback (RLHF) to train the model to converse responsively. 
-In RLHF, the model is rewarded for responding appropriately to conversation context, admitting ignorance rather than guessing, and refusing inappropriate requests. This reinforcement signal from human evaluators provides feedback to enhance the model's conversational abilities. One of key components of RLHF is Proximal Policy Optimization (PPO).
+In RLHF, the model is rewarded for responding appropriately to conversation context, admitting ignorance rather than guessing, and refusing inappropriate requests. This reinforcement signal from human evaluators provides feedback to enhance the model's conversational abilities. One of key components of RLHF is [Proximal Policy Optimization (PPO)](https://arxiv.org/pdf/1707.06347.pdf).
 
 The goal of PPO is to maximize the expected return $J(\theta)$ of a stochastic policy $\pi_\theta(a_t|s_t)$ over all timesteps $t$, where $\theta$ are the policy parameters, $s_t$ is the state and $a_t$ is the action.
 The PPO objective function contains three main terms:
+
 1. Clipped Surrogate Loss
+This is a method to update a policy neural network in a stable way. Normally we update networks to reduce a loss function. But with reinforcement learning the loss can spike up and down violently. Clipping limits the amount the loss can change during an update, keeping training smooth.
+
 2. Value Function Loss
+The value function predicts how good a state is. We train it by taking its prediction, seeing the reward we actually get, and updating the network to reduce the difference. This is the value function loss - it's just the error between its prediction and the true value. Minimizing this "loss" makes the value predictions more accurate.
+
 3. Entropy Bonus
+Entropy measures how randomly a policy acts. High entropy means totally random. Low entropy means very predictable. Adding an entropy bonus rewards the policy for being more random initially. This encourages exploration to find novel solutions. As training progresses, the bonus is reduced so the policy exploits the best solution found.
+
+In summary, Clipped loss keeps policy updates smooth, Value function loss improves state value predictions, and Entropy bonus incentivizes exploration then exploitation.
 
 Adding entropy bonus encourages exploration and prevents premature convergence.
 The overall PPO loss function is:
