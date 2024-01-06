@@ -11,7 +11,7 @@ Transformers lead a new era of contextual sequence modeling through their pionee
 
 Image source: http://peterbloem.nl/blog/transformers
 
-The attention mechanism creates direct connections between all inputs in a sequence, allowing the model to focus on the most relevant parts as needed. This is akin to how we pay visual attention to certain regions in an image.
+The attention mechanism creates direct connections between all inputs in a sequence, allowing the model to focus on the most relevant parts as needed. This is similar to how we pay visual attention to certain regions in an image.
 Human comprehension integrates context fluidly. When reading text, we interpret the meaning of each word in relation to the surrounding words and phrases. Transformers mimic this contextual processing through multi-headed self-attention. The model learns contextual relationships between all words in a passage, not just sequential dependencies.
 This flexible contextual processing provides advantages for real-world NLP applications. In translation, transformers excel at carrying over contextual meaning from the source to target languages, something lost with RNNs. The model dynamically attends to the most relevant context to produce fluent translations.
 Similarly for text summarization, the transformer can pinpoint the most salient points in a document by modeling the full context. This mirrors human understanding of picking out key ideas from contextual information.
