@@ -20,7 +20,7 @@ $$p(u) = Π_p^{T=1} p(u_t | u_1, ..., u_{t-1})$$
 
 where the context vector $h_i$ for predicting next token $u_i$ is derived by applying self-attention on the prior subsequence $u_1$ to $u_{t-1}$.
 
-This context vector encodes the relevant contextual information from the previous tokens $(u_1 to u_{i-1})$ that can help predict the next token ui.
+This context vector encodes the relevant contextual information from the previous tokens $(u_1$ to $u_{i-1})$ that can help predict the next token ui.
 The context vector $h_i$ is obtained by applying multi-headed self-attention on the previous token embeddings. Specifically, the self-attention layer takes as input the sequence of token embeddings $(e_1, ..., e_{i-1})$ up to position $i-1$. It draws global dependencies between these token embeddings to create a new contextualized representation for each token.
 Mathematically, a self-attention head computes attention scores between each pair of tokens $(e_j, e_k)$ using:
 
